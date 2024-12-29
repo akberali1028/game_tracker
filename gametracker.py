@@ -7,7 +7,7 @@ from pynput.keyboard import Listener as KeyboardListener # type: ignore
 import datetime
 from datetime import date
 
-"""games_on = []
+games_on = []
 LOG_File = "game_sessions.json"
 afk_time=120
 
@@ -59,7 +59,6 @@ def check_is_running():
             print(time_game(a))
     else: print("no game is running cuh")
 check_is_running()
-"""
 
 
-print(date.today())
+
