@@ -1,32 +1,7 @@
-[
-    {
-        "NZXT CAM.exe": 534808,
-        "Discovery.exe": 0,
-        "VALORANT-Win64-Shipping.exe": 5234,
-        "FortniteClient-Win64-Shipping.exe": 75555
-    },
-    {
-        "name":"Valorant",
-        "playtime":283,
-        "lastplayed":93,
-        "lastsess":2958
-    },
-    {
-        "name":"fortnite",
-        "playtime":283,
-        "lastplayed":93,
-        "lastsess":2958
-    },
-    {
-        "name":"Valorant",
-        "playtime":283,
-        "lastplayed":93,
-        "lastsess":2958
-    },
-    {
-        "name":"Valorant",
-        "playtime":283,
-        "lastplayed":93,
-        "lastsess":2958
-    }
-]
+
+ {
+    "NZXT CAM.exe": 534808,
+    "Discovery.exe": 0,
+    "VALORANT-Win64-Shipping.exe": 5234,
+    "FortniteClient-Win64-Shipping.exe": 75555
+}
