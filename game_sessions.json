@@ -1,7 +1,34 @@
-
- {
-    "NZXT CAM.exe": 534808,
-    "Discovery.exe": 0,
-    "VALORANT-Win64-Shipping.exe": 5234,
-    "FortniteClient-Win64-Shipping.exe": 75555
+{
+    "NZXT CAM.exe": [
+        {
+            "name": "test",
+            "playtime": 88,
+            "lastplayed": "2025-01-10",
+            "lastsess": 8
+        }
+    ],
+    "Discovery.exe": [
+        {
+            "name": "Finals",
+            "playtime": 0,
+            "lastplayed": "2024-12-30",
+            "lastsess": 0
+        }
+    ],
+    "VALORANT-Win64-Shipping.exe": [
+        {
+            "name": "Valorant",
+            "playtime": 0,
+            "lastplayed": "2024-12-30",
+            "lastsess": 0
+        }
+    ],
+    "FortniteClient-Win64-Shipping.exe": [
+        {
+            "name": "fortnite",
+            "playtime": 0,
+            "lastplayed": "2024-12-30",
+            "lastsess": 0
+        }
+    ]
 }
