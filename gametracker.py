@@ -19,34 +19,38 @@ test_process="NZXT CAM.exe"
 
 all_processes = frozenset({fortnite_process,valorant_process,finals_process,test_process})
 
+
 def is_game_running(game_name):
     for process in psutil.process_iter():
         if process.name() == game_name:
             return True
     return False
     
-def inactive():
-    while game_on == True:
-        #afk code
-        time.sleep(3)
-        if game_on==False:
-            print("done")
-            break
 
 def time_game(game_name):
     global game_on
+    with open(LOG_File,'r') as f:
+        yaa = json.load(f)
+        goal = yaa[game_name][0]['Goal']
     if is_game_running(game_name)==False:
         print("No game is running")
     else:
         start_time = time.time()
         game_on=True
-        time.sleep(3)
-        t = threading.Thread(target=inactive)
-        t.start()
+        if goal!=0:
+            def inactive():
+                while game_on == True:
+                    if (time.time()-start_time>goal):
+                    #do whatever after time exceeded the goal
+                        print("STOP!!")
+                        break
+                    if game_on==False:
+                        print("done")
+                        break
+            t = threading.Thread(target=inactive)
+            t.start()
         print("game started")
         while(is_game_running(game_name)==True):
-            
-
             end_time = time.time()      
         game_on=False
         played = end_time-start_time
