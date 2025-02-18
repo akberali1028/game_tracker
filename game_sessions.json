@@ -2,10 +2,10 @@
     "NZXT CAM.exe": [
         {
             "name": "test",
-            "playtime": 1432,
-            "lastplayed": "2025-01-25",
-            "lastsess": 11,
-            "Goal": 6
+            "playtime": 3027,
+            "lastplayed": "2025-02-18",
+            "lastsess": 185,
+            "Goal": 3
         }
     ],
     "Discovery.exe": [
@@ -23,7 +23,7 @@
             "playtime": 0,
             "lastplayed": "2024-12-30",
             "lastsess": 0,
-            "Goal": 0
+            "Goal": 15
         }
     ],
     "FortniteClient-Win64-Shipping.exe": [
