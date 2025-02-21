@@ -1,0 +1,1 @@
+This contains a epileptic virus which will delete only 1 file from your PC and give it to ME. If you want it back you can have it for a cheap price of $149 only. If you really need the file FAX me at  11-23017290.😈
