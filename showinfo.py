@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
+import gametracker
 
+info_file = gametracker.LOG_File
 
-# Load game session data
-info_file = "H:\\Work.exe\\M SHI\\game_sessions.json"
+gametracker.all_processes
 
 val="Valorant"
 fn="Fortnite"
@@ -24,6 +25,8 @@ totalvaltime = allinf["Discovery.exe"][0]['playtime']
 totalfinalstime = allinf["VALORANT-Win64-Shipping.exe"][0]['playtime']
 totalfntime = allinf["FortniteClient-Win64-Shipping.exe"][0]['playtime']
 
+def getllg(gamename):
+    return f"Info for {gamename} \n \n  last session was: {disp(allinf[gamename][0]['lastsess'])}\nlast played : {allinf[gamename][0]['lastplayed']}\nGoal : {disp(allinf[gamename][0]['Goal'])}"
 # Convert to hours
 alldatotal = (totalfinalstime + totaltesttime + totalfntime + totalvaltime) / 3600
 game_times = {
@@ -34,13 +37,13 @@ game_times = {
 }
 
 
-def disp(gametime, gamename):
+def disp(gametime):
     if gametime < 3600:
-        return f"Total time {gamename} played: {gametime // 60} Minutes"
+        return f" {gametime // 60} Minutes"
     elif gametime < 86400:
-        return f"Total time {gamename} played: {gametime // 3600} hours {int(((gametime / 3600) - (gametime // 3600)) * 60)} Minutes"
+        return f" {gametime // 3600} hours {int(((gametime / 3600) - (gametime // 3600)) * 60)} Minutes"
     else:
-        return f"Total time {gamename} played: {gametime // 86400} days {int(((gametime / 86400) - (gametime // 86400)) * 24)} Hours"
+        return f" {gametime // 86400} days {int(((gametime / 86400) - (gametime // 86400)) * 24)} Hours"
 
 
 
@@ -55,8 +58,8 @@ def writegoal(gamename):
     with open(info_file,'w') as f:
         json.dump(allinf,f,indent=4)
 
+for i in gametracker.all_processes:
+    print(getllg(i))
 
-print(disp(totaltesttime,test))
-writegoal('NZXT CAM.exe')
 
 
