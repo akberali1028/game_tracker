@@ -4,8 +4,8 @@
 # /docker-compose.yml @akberali1028
 
 # Database owner
-src/db/ @p3username
-src/models/ @p3username
+# /src/db/ @p3username
+# /src/models/ @p3username
 
 # Backend owner
 src/routes/ @p2username
