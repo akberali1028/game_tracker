@@ -1,7 +1,7 @@
 # DevOps / Infra
 /.github/ @akberali1028
-Dockerfile @akberali1028
-docker-compose.yml @akberali1028
+# /Dockerfile @akberali1028
+# /docker-compose.yml @akberali1028
 
 # Database owner
 src/db/ @p3username
