@@ -1,0 +1,17 @@
+# DevOps / Infra
+/.github/ @akberali1028
+Dockerfile @akberali1028
+docker-compose.yml @akberali1028
+
+# Database owner
+src/db/ @p3username
+src/models/ @p3username
+
+# Backend owner
+src/routes/ @p2username
+src/controllers/ @p2username
+src/services/ @p2username
+
+# Frontend owner
+src/components/ @p1username
+src/app/ @p1username
