@@ -8,9 +8,9 @@
 # /src/models/ @p3username
 
 # Backend owner
-src/routes/ @p2username
-src/controllers/ @p2username
-src/services/ @p2username
+# /src/routes/ @p2username
+# /src/controllers/ @p2username
+# /src/services/ @p2username
 
 # Frontend owner
 src/components/ @p1username
