@@ -13,5 +13,5 @@
 # /src/services/ @p2username
 
 # Frontend owner
-src/components/ @p1username
-src/app/ @p1username
+# /src/components/ @p1username
+# /src/app/ @p1username
