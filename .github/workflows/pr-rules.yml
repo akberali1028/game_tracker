@@ -1,0 +1,35 @@
+name: PR Branch Rules
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  validate-pr-flow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR Flow
+        shell: bash
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          echo "PR: $HEAD -> $BASE"
+
+          if [[ "$HEAD" == feature/* && "$BASE" != "dev" ]]; then
+            echo "ERROR: feature branches must target dev"
+            exit 1
+          fi
+
+          if [[ "$HEAD" == "dev" && "$BASE" != "staging" ]]; then
+            echo "ERROR: dev branch must target staging"
+            exit 1
+          fi
+
+          if [[ "$HEAD" == "staging" && "$BASE" != "main" ]]; then
+            echo "ERROR: staging branch must target main"
+            exit 1
+          fi
+
+          echo "PR flow valid"
