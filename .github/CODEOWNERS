@@ -1,6 +1,17 @@
 # DevOps / Infra
-* @akberali1028
-# /Dockerfile @akberali1028
-# /docker-compose.yml @akberali1028
+/.github/ @akberali1028
+Dockerfile @akberali1028
+docker-compose.yml @akberali1028
 
-# (Optional) Add more specific owners below as the repo grows, e.g. /path/ @owner
+# Database owner
+src/db/ @p3username
+src/models/ @p3username
+
+# Backend owner
+src/routes/ @p2username
+src/controllers/ @p2username
+src/services/ @p2username
+
+# Frontend owner
+src/components/ @p1username
+src/app/ @p1username

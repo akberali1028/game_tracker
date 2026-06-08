@@ -1,0 +1,44 @@
+```yaml
+name: Discord Notifications
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+  pull_request:
+    types: [opened, closed, reopened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            MESSAGE="🚀 **Push Event**
+            
+Repository: ${{ github.repository }}
+Branch: ${{ github.ref_name }}
+Pushed by: ${{ github.actor }}
+
+Commit:
+${{ github.event.head_commit.message }}"
+          else
+            MESSAGE="🔀 **Pull Request Event**
+            
+Repository: ${{ github.repository }}
+PR: ${{ github.event.pull_request.title }}
+Action: ${{ github.event.action }}
+By: ${{ github.actor }}"
+          fi
+
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{\"content\":\"$MESSAGE\"}" \
+          $DISCORD_WEBHOOK
+```
