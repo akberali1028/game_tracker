@@ -16,29 +16,18 @@ jobs:
       - name: Send Discord Notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          EVENT_NAME:   ${{ github.event_name }}
-          REPO:         ${{ github.repository }}
-          ACTOR:        ${{ github.actor }}
-          REF_NAME:     ${{ github.ref_name }}
-          COMMIT_MSG:   ${{ github.event.head_commit.message }}
-          PR_TITLE:     ${{ github.event.pull_request.title }}
-          PR_ACTION:    ${{ github.event.action }}
+          EVENT_NAME:  ${{ github.event_name }}
+          REPO:        ${{ github.repository }}
+          ACTOR:       ${{ github.actor }}
+          REF_NAME:    ${{ github.ref_name }}
+          COMMIT_MSG:  ${{ github.event.head_commit.message }}
+          PR_TITLE:    ${{ github.event.pull_request.title }}
+          PR_ACTION:   ${{ github.event.action }}
         run: |
           if [ "$EVENT_NAME" = "push" ]; then
-            MESSAGE="🚀 **Push Event**
-
-Repository: $REPO
-Branch: $REF_NAME
-Pushed by: $ACTOR
-
-Commit: $COMMIT_MSG"
+            MESSAGE=$(printf "🚀 **Push Event**\n\nRepository: %s\nBranch: %s\nPushed by: %s\n\nCommit: %s" "$REPO" "$REF_NAME" "$ACTOR" "$COMMIT_MSG")
           else
-            MESSAGE="🔀 **Pull Request Event**
-
-Repository: $REPO
-PR: $PR_TITLE
-Action: $PR_ACTION
-By: $ACTOR"
+            MESSAGE=$(printf "🔀 **Pull Request Event**\n\nRepository: %s\nPR: %s\nAction: %s\nBy: %s" "$REPO" "$PR_TITLE" "$PR_ACTION" "$ACTOR")
           fi
 
           curl -H "Content-Type: application/json" \
